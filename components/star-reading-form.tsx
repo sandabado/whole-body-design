@@ -234,13 +234,13 @@ export function StarReadingForm() {
         ) : (
           <>
             <Sparkles className="mr-2 h-4 w-4" />
-            Get Your Whole Body Design Reading →
+            Calculate My House →
           </>
         )}
       </Button>
 
       <p className="text-center font-mono text-xs text-moonstone/48">
-        Takes 60 seconds. Free. No spam. Ever.
+        Takes 60 seconds. 100% confidential. Data encrypted.
       </p>
     </form>
   )
