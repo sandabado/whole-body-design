@@ -6,7 +6,6 @@ import {
 } from "@/components/platonic-background"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
-import { Card } from "@/components/ui/card"
 
 type Tone = {
   accent: string
@@ -18,64 +17,6 @@ type Tone = {
   softAccent: string
   solid: SolidType
 }
-
-export const pillarTones = {
-  ember: {
-    accent: "text-ember",
-    bg: "from-obsidian/80 via-ember/14 to-obsidian/72",
-    border: "border-ember/25",
-    button:
-      "bg-ember text-white shadow-[0_0_28px_rgba(194,84,45,0.3)] hover:bg-ember/90 hover:shadow-[0_0_34px_rgba(194,84,45,0.42)]",
-    buttonVariant: "ember",
-    sectionBorder: "border-ember/10",
-    softAccent: "text-ember/70",
-    solid: "tetrahedron",
-  },
-  gold: {
-    accent: "text-gold",
-    bg: "from-obsidian/80 via-gold/14 to-obsidian/72",
-    border: "border-gold/25",
-    button:
-      "bg-gold text-obsidian shadow-[0_0_28px_rgba(212,175,55,0.3)] hover:bg-gold/90 hover:shadow-[0_0_34px_rgba(212,175,55,0.42)]",
-    buttonVariant: "gold",
-    sectionBorder: "border-gold/10",
-    softAccent: "text-gold/70",
-    solid: "octahedron",
-  },
-  sage: {
-    accent: "text-sage",
-    bg: "from-obsidian/80 via-sage/14 to-obsidian/72",
-    border: "border-sage/25",
-    button:
-      "bg-sage text-white shadow-[0_0_28px_rgba(74,103,65,0.3)] hover:bg-sage/90 hover:shadow-[0_0_34px_rgba(74,103,65,0.42)]",
-    buttonVariant: "sage",
-    sectionBorder: "border-sage/10",
-    softAccent: "text-sage/70",
-    solid: "hexahedron",
-  },
-  teal: {
-    accent: "text-teal",
-    bg: "from-obsidian/80 via-teal/14 to-obsidian/72",
-    border: "border-teal/25",
-    button:
-      "bg-teal text-white shadow-[0_0_28px_rgba(43,168,160,0.3)] hover:bg-teal/90 hover:shadow-[0_0_34px_rgba(43,168,160,0.42)]",
-    buttonVariant: "teal",
-    sectionBorder: "border-teal/10",
-    softAccent: "text-teal/70",
-    solid: "icosahedron",
-  },
-  violet: {
-    accent: "text-violet",
-    bg: "from-obsidian/80 via-violet/14 to-obsidian/72",
-    border: "border-violet/25",
-    button:
-      "bg-violet text-white shadow-[0_0_28px_rgba(109,74,255,0.3)] hover:bg-violet/90 hover:shadow-[0_0_34px_rgba(109,74,255,0.42)]",
-    buttonVariant: "violet",
-    sectionBorder: "border-violet/10",
-    softAccent: "text-violet/70",
-    solid: "dodecahedron",
-  },
-} satisfies Record<string, Tone>
 
 export function PillarPageShell({
   children,
@@ -178,51 +119,5 @@ export function PillarSection({
         <div className="mt-7">{children}</div>
       </div>
     </section>
-  )
-}
-
-export function PillarCard({
-  children,
-  compact = false,
-  tone,
-}: {
-  children: ReactNode
-  compact?: boolean
-  tone: Tone
-}) {
-  return (
-    <Card
-      className={`h-full ${tone.border} bg-obsidian/82 ${
-        compact
-          ? "relative min-h-64 p-4 pb-16 [&_[data-slot=button]]:absolute [&_[data-slot=button]]:right-4 [&_[data-slot=button]]:bottom-4 [&_[data-slot=button]]:left-4"
-          : "p-6"
-      }`}
-    >
-      {children}
-    </Card>
-  )
-}
-
-export function StepList({
-  steps,
-  tone,
-}: {
-  steps: { body: string; title: string }[]
-  tone: Tone
-}) {
-  return (
-    <div className="grid gap-4 md:grid-cols-4">
-      {steps.map((step, index) => (
-        <Card className={`${tone.border} bg-obsidian/82 p-5`} key={step.title}>
-          <p className={`font-mono text-xs ${tone.accent}`}>Step {index + 1}</p>
-          <h3 className="mt-3 font-display text-xl text-moonstone">
-            {step.title}
-          </h3>
-          <p className="mt-3 text-sm leading-6 text-moonstone/68">
-            {step.body}
-          </p>
-        </Card>
-      ))}
-    </div>
   )
 }

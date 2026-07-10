@@ -1,1 +1,12 @@
-export { POST } from "@/app/api/auth/sign-out/route"
+import { NextResponse } from "next/server"
+
+import { SESSION_COOKIE } from "@/auth"
+
+export async function POST(request: Request) {
+  const response = NextResponse.redirect(new URL("/", request.url), {
+    status: 303,
+  })
+
+  response.cookies.delete(SESSION_COOKIE)
+  return response
+}

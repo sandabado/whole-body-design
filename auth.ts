@@ -122,7 +122,7 @@ function sign(value: string) {
 function getAuthSecret() {
   if (process.env.AUTH_SECRET) return process.env.AUTH_SECRET
   if (process.env.NODE_ENV !== "production") {
-    return "whole-body-earth-local-dev-secret"
+    return "whole-body-design-local-dev-secret"
   }
 
   throw new Error("AUTH_SECRET is required in production")
@@ -138,7 +138,7 @@ function safeEqual(left: string, right: string) {
 }
 
 function stableUserId(email: string) {
-  const hash = createHmac("sha256", "whole-body-earth-user-id")
+  const hash = createHmac("sha256", "whole-body-design-user-id")
     .update(email)
     .digest("hex")
     .slice(0, 32)

@@ -8,37 +8,22 @@ import { Card } from "@/components/ui/card"
 
 export default async function AccountPage() {
   const session = await auth()
-  if (!session?.user) redirect("/sign-in?redirect=/account")
+  if (!session?.user) redirect("/account/signin?redirect=/account")
 
   return (
     <PageShell>
-      <PageHero eyebrow="MyLiving.Earth" title="Member Dashboard">
-        <p>
-          Signed in as {session.user.email}. Your library and membership tools
-          live here.
-        </p>
+      <PageHero eyebrow="WholeBody Design" title="Your Account">
+        <p>Signed in as {session.user.email}.</p>
       </PageHero>
       <section className="px-6 py-16">
-        <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
-          <Card className="bg-gray-900/72 p-6">
-            <h2 className="font-display text-3xl text-gold">Library</h2>
-            <p className="mt-3 text-moonstone/70">
-              Owned manuals and member access.
-            </p>
-            <Button className="mt-6" asChild>
-              <Link href="/account/library">Open Library</Link>
-            </Button>
-          </Card>
-          <Card className="bg-gray-900/72 p-6">
-            <h2 className="font-display text-3xl text-gold">Membership</h2>
-            <p className="mt-3 text-moonstone/70">
-              Manage subscription status and support level.
-            </p>
-            <Button className="mt-6" variant="outline" asChild>
-              <Link href="/account/membership">Manage</Link>
-            </Button>
-          </Card>
-        </div>
+        <Card className="mx-auto max-w-2xl border-gold/15 bg-obsidian/82 p-7 text-center">
+          <h2 className="font-display text-3xl text-gold">Your Design Network</h2>
+          <p className="mt-4 text-moonstone/70">Return to your House reading or enter the sovereign creator network.</p>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <Button asChild><Link href="/reading">Get Your Reading</Link></Button>
+            <Button variant="violet" asChild><Link href="/guild">Explore the Guild</Link></Button>
+          </div>
+        </Card>
       </section>
     </PageShell>
   )

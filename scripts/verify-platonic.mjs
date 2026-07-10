@@ -91,7 +91,7 @@ async function run() {
       const firstSample = await sampleCanvas(page)
       await page.screenshot({
         fullPage: false,
-        path: `/private/tmp/whole-body-earth-${target.name}-hero.png`,
+        path: `/private/tmp/whole-body-design-${target.name}-hero.png`,
       })
 
       await page.locator("text=Visit the Store").scrollIntoViewIfNeeded()
@@ -99,7 +99,7 @@ async function run() {
       const scrolledSample = await sampleCanvas(page)
       await page.screenshot({
         fullPage: false,
-        path: `/private/tmp/whole-body-earth-${target.name}-pathways.png`,
+        path: `/private/tmp/whole-body-design-${target.name}-pathways.png`,
       })
 
       const portalCount = await page.locator("#portal").count()

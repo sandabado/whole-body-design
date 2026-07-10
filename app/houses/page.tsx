@@ -124,40 +124,30 @@ const elementGroups = [
   {
     element: "Fire",
     houses: ["I", "VI", "XI"],
-    href: "/presence",
-    name: "Presence",
     symbol: "🜂",
     tone: "ember",
   },
   {
     element: "Air",
     houses: ["III", "VIII"],
-    href: "/press",
-    name: "Press",
     symbol: "🜁",
     tone: "gold",
   },
   {
     element: "Water",
     houses: ["II", "VII", "XII"],
-    href: "/studios",
-    name: "Studios",
     symbol: "🜄",
     tone: "teal",
   },
   {
     element: "Earth",
     houses: ["IV", "IX"],
-    href: "/foundation",
-    name: "Foundation",
     symbol: "🜃",
     tone: "sage",
   },
   {
     element: "Ether",
     houses: ["V", "X"],
-    href: "/guardian",
-    name: "Guardian",
     symbol: "⊙",
     tone: "violet",
   },
@@ -325,13 +315,6 @@ export default function HousesPage() {
                       </div>
                     ))}
                   </div>
-                  <Button
-                    variant="link"
-                    className={`mt-4 p-0 ${textTone[group.tone]}`}
-                    asChild
-                  >
-                    <Link href={group.href}>Explore {group.name} →</Link>
-                  </Button>
                 </details>
               )
             })}
@@ -345,20 +328,15 @@ export default function HousesPage() {
         tone={housesTone}
       >
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {[
               [
-                "Learn the full system through the Codex.",
-                "Browse the Codex",
-                "/manuals",
+                "Take the Whole Body Design Reading to discover your House.",
+                "Get Your Reading",
+                "/reading",
               ],
               [
-                "Work directly with Jesse to understand your design.",
-                "Book Consultation",
-                "/book",
-              ],
-              [
-                "Join the Guild and build with people who know their House.",
+                "Join the sovereign network. Build with people who know their House.",
                 "Join the Guild",
                 "/guild",
               ],
@@ -368,7 +346,7 @@ export default function HousesPage() {
                 key={cta}
               >
                 <p className="text-sm leading-6 text-moonstone/70">{body}</p>
-                <Button variant="pinkOutline" className="mt-5" asChild>
+                <Button variant={href === "/reading" ? "gold" : "violet"} className="mt-5" asChild>
                   <Link href={href}>{cta} →</Link>
                 </Button>
               </Card>

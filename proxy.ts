@@ -4,11 +4,11 @@ import type { NextRequest } from "next/server"
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
-  if (pathname.startsWith("/account")) {
+  if (pathname.startsWith("/account") && pathname !== "/account/signin") {
     const authCookie = request.cookies.get("session-token")
 
     if (!authCookie) {
-      const signInUrl = new URL("/sign-in", request.url)
+      const signInUrl = new URL("/account/signin", request.url)
       signInUrl.searchParams.set("redirect", pathname)
       return NextResponse.redirect(signInUrl)
     }

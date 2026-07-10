@@ -35,10 +35,10 @@ export async function POST(request: NextRequest) {
     if (!session?.user) {
       if (isFormPost) {
         const signInUrl = new URL(
-          "/sign-in",
+          "/account/signin",
           process.env.BASE_URL || request.nextUrl.origin
         )
-        signInUrl.searchParams.set("redirect", "/store")
+        signInUrl.searchParams.set("redirect", "/guild")
         return NextResponse.redirect(signInUrl, { status: 303 })
       }
 
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
         }
 
     const checkoutSession = await stripe.checkout.sessions.create({
-      cancel_url: `${baseUrl}/store?canceled=true`,
+      cancel_url: `${baseUrl}/guild?canceled=true`,
       client_reference_id: session.user.id,
       customer_email: session.user.email || email || undefined,
       line_items: [lineItem],
@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
               },
             }
           : undefined,
-      success_url: `${baseUrl}/account/library?success=true`,
+      success_url: `${baseUrl}/account?membership=active`,
     })
 
     if (isFormPost && checkoutSession.url) {
@@ -161,7 +161,7 @@ async function resolveProduct(
 function checkoutError(message: string, status: number, redirect: boolean) {
   if (redirect) {
     const url = new URL(
-      "/store",
+      "/guild",
       process.env.BASE_URL || "http://localhost:3001"
     )
     url.searchParams.set("checkout", "error")

@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
   const redirectTo = safeRedirectPath(String(formData.get("redirect") || ""))
 
   if (!email || !email.includes("@")) {
-    const url = new URL("/sign-in", request.url)
+    const url = new URL("/account/signin", request.url)
     url.searchParams.set("error", "email")
     return NextResponse.redirect(url, { status: 303 })
   }
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     return response
   } catch (error) {
     console.error("Sign in failed:", error)
-    const url = new URL("/sign-in", request.url)
+    const url = new URL("/account/signin", request.url)
     url.searchParams.set("error", "server")
     return NextResponse.redirect(url, { status: 303 })
   }
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
 
 function safeRedirectPath(path: string) {
   if (!path || !path.startsWith("/") || path.startsWith("//")) {
-    return "/account/library"
+    return "/account"
   }
 
   return path

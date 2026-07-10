@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "WholeBody | The Living Earth Constellation",
+  title: "Whole Body Design | Discover Your House",
   description:
-    "Five elements. Five pillars. One living body. Two live now. Three launching 2027.",
+    "The Dodecanic System. Twelve Houses of the Dodecahedron. Take the Whole Body Design Reading to discover your element, archetype, and pillar.",
 }
 
 export default function RootLayout({
