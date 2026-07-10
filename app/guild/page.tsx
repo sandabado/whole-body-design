@@ -77,7 +77,7 @@ function JoinGuildButton({ children }: { children: React.ReactNode }) {
 
 export default function GuildPage() {
   return (
-    <PageShell>
+    <PageShell bridge="guild">
       <section className="relative overflow-hidden border-b border-gold/10 px-6 py-20 text-center sm:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.18),transparent_34%),radial-gradient(circle_at_20%_18%,rgba(109,74,255,0.14),transparent_28%)]" />
         <div className="relative mx-auto max-w-4xl">

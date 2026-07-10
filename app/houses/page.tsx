@@ -208,7 +208,7 @@ const housesTone = {
 
 export default function HousesPage() {
   return (
-    <PillarPageShell solid={housesTone.solid}>
+    <PillarPageShell bridge="houses" solid={housesTone.solid}>
       <PillarHero
         body={
           <>

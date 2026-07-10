@@ -4,14 +4,22 @@ import Link from "next/link"
 
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
+import { EarthBridge, type EarthBridgeVariant } from "@/components/earth-bridge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-export function PageShell({ children }: { children: ReactNode }) {
+export function PageShell({
+  bridge = "default",
+  children,
+}: {
+  bridge?: EarthBridgeVariant
+  children: ReactNode
+}) {
   return (
     <>
       <SiteNav />
       <main className="min-h-screen bg-obsidian">{children}</main>
+      <EarthBridge variant={bridge} />
       <SiteFooter />
     </>
   )

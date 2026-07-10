@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
   return (
-    <PageShell>
+    <PageShell bridge="about">
       <PageHero eyebrow="About" title="The Story Behind the System">
         <p>
           Whole Body Design was built by Jesse Gawlik, founder of Whole Body

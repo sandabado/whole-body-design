@@ -6,6 +6,7 @@ import {
 } from "@/components/platonic-background"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
+import { EarthBridge, type EarthBridgeVariant } from "@/components/earth-bridge"
 
 type Tone = {
   accent: string
@@ -19,9 +20,11 @@ type Tone = {
 }
 
 export function PillarPageShell({
+  bridge = "default",
   children,
   solid,
 }: {
+  bridge?: EarthBridgeVariant
   children: ReactNode
   solid: SolidType
 }) {
@@ -31,6 +34,7 @@ export function PillarPageShell({
       <div className="relative z-10">
         <SiteNav />
         <main id="pillar-page">{children}</main>
+        <EarthBridge variant={bridge} />
         <SiteFooter />
       </div>
     </>

@@ -2,7 +2,7 @@ import { PageHero, PageShell } from "@/components/page-shell"
 
 export default function ContactPage() {
   return (
-    <PageShell>
+    <PageShell bridge="contact">
       <PageHero eyebrow="Contact" title="Get in Touch">
         <p>
           Questions about the system, an enterprise inquiry, or a partnership

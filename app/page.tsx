@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { PlatonicBackground } from "@/components/platonic-background"
+import { EarthBridge } from "@/components/earth-bridge"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
 import { StarReadingForm } from "@/components/star-reading-form"
@@ -335,6 +336,7 @@ export default function HomePage() {
             </div>
           </section>
         </main>
+        <EarthBridge />
         <SiteFooter />
       </div>
     </>

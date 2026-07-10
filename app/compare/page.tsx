@@ -25,7 +25,7 @@ const rows = [
 
 export default function ComparePage() {
   return (
-    <PageShell>
+    <PageShell bridge="compare">
       <PageHero
         eyebrow="Comparison"
         title="How the Dodecanic System Is Different"

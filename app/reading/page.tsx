@@ -21,7 +21,7 @@ const steps = [
 
 export default function ReadingPage() {
   return (
-    <PageShell>
+    <PageShell bridge="reading">
       <section className="relative overflow-hidden px-6 py-20 text-center sm:py-24">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.16),transparent_38%),radial-gradient(circle_at_20%_20%,rgba(109,74,255,0.14),transparent_30%)]" />
         <div className="relative mx-auto max-w-5xl">
