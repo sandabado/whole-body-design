@@ -3,6 +3,7 @@ import Link from "next/link"
 import { PlatonicBackground } from "@/components/platonic-background"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
+import { StarReadingForm } from "@/components/star-reading-form"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -20,7 +21,7 @@ export default function HomePage() {
         { id: "hero", solid: "heroDodecahedron" },
         { id: "architecture", solid: "dodecahedron" },
         { id: "glimpse", solid: "dodecahedron" },
-        { id: "final-cta", solid: "dodecahedron" },
+        { id: "reading", solid: "dodecahedron" },
       ]} />
       <div className="relative z-10">
         <SiteNav />
@@ -31,7 +32,7 @@ export default function HomePage() {
               <p className="font-mono text-xs tracking-[0.3em] text-gold uppercase sm:text-sm">Dovecana · The 12 Houses</p>
               <h1 className="mt-6 font-display text-5xl leading-none font-bold text-moonstone sm:text-6xl lg:text-7xl">The Dodecanic System</h1>
               <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-moonstone/70">Twelve rooms in the Dodecahedron. You were born into one. Each House maps to an element, an archetype, and a pillar of the Living Earth. This is your design.</p>
-              <Button size="lg" className="mt-9" asChild><Link href="/reading">Get Your Whole Body Design Reading →</Link></Button>
+              <Button size="lg" className="mt-9" asChild><Link href="#reading">Get Your Whole Body Design Reading →</Link></Button>
             </div>
           </section>
 
@@ -69,12 +70,15 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section id="final-cta" className="border-t border-gold/10 px-6 py-20 text-center">
-            <div className="mx-auto max-w-2xl">
-              <h2 className="font-display text-3xl text-gold">Which House Are You?</h2>
-              <p className="mt-6 text-lg leading-8 text-moonstone/70">Sixty seconds. No email required for basic reading. Your birth data reveals your House, your element, your archetype, and your sovereignty layer.</p>
-              <Button size="lg" className="mt-8" asChild><Link href="/reading">Get Your Whole Body Design Reading →</Link></Button>
-              <p className="mt-5 text-sm text-moonstone/50">Already know your House? <Link className="text-violet hover:text-violet/80" href="/guild">Join the Guild →</Link></p>
+          <section id="reading" className="scroll-mt-20 border-t border-gold/10 px-6 py-20 text-center">
+            <div className="mx-auto max-w-5xl">
+              <p className="font-mono text-xs tracking-[0.3em] text-gold uppercase">Whole Body Design Reading</p>
+              <h2 className="mt-5 font-display text-4xl text-gold sm:text-5xl">Discover Your House</h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-moonstone/70">Enter your birth data. The Dodecahedron maps twelve Houses. Yours is written in the coordinates of your arrival.</p>
+              <div className="mx-auto mt-10 max-w-4xl rounded-lg border border-gold/15 bg-obsidian/76 p-6 text-left shadow-2xl backdrop-blur-md sm:p-8">
+                <StarReadingForm />
+              </div>
+              <p className="mt-6 text-sm text-moonstone/50">Already know your House? <Link className="text-violet hover:text-violet/80" href="/guild">Join the Guild →</Link></p>
             </div>
           </section>
         </main>

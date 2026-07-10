@@ -30,7 +30,7 @@ export function SiteNavClient({ isLoggedIn }: { isLoggedIn: boolean }) {
               </div>
             </div>
           ) : <Link className="px-3 py-2 text-sm text-moonstone/75 transition hover:text-gold" href="/account/signin">Sign In</Link>}
-          <Button size="sm" asChild><Link href="/reading">Get Your Reading →</Link></Button>
+          <Button size="sm" asChild><Link href="/#reading">Get Your Reading →</Link></Button>
         </div>
         <Button aria-expanded={open} aria-label={open ? "Close menu" : "Open menu"} className="justify-self-end lg:hidden" onClick={() => setOpen((value) => !value)} size="icon" type="button" variant="outline">{open ? <X /> : <Menu />}</Button>
       </div>
@@ -39,7 +39,7 @@ export function SiteNavClient({ isLoggedIn }: { isLoggedIn: boolean }) {
           <Link className="rounded px-3 py-3 hover:bg-white/5" href="/houses" onClick={() => setOpen(false)}>Houses</Link>
           <Link className="rounded px-3 py-3 hover:bg-white/5" href="/guild" onClick={() => setOpen(false)}>Guild</Link>
           <Link className="rounded px-3 py-3 hover:bg-white/5" href={isLoggedIn ? "/account" : "/account/signin"} onClick={() => setOpen(false)}>{isLoggedIn ? "Account" : "Sign In"}</Link>
-          <Button className="mt-2 w-full" asChild><Link href="/reading" onClick={() => setOpen(false)}>Get Your Reading →</Link></Button>
+          <Button className="mt-2 w-full" asChild><Link href="/#reading" onClick={() => setOpen(false)}>Get Your Reading →</Link></Button>
         </div>
       </div>
     </nav>

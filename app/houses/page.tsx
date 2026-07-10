@@ -195,7 +195,7 @@ export default function HousesPage() {
               Earth. This is your design.
             </p>
             <Button size="lg" asChild>
-              <Link href="/reading">Get Your Whole Body Design Reading →</Link>
+              <Link href="/#reading">Get Your Whole Body Design Reading →</Link>
             </Button>
           </>
         }
@@ -236,7 +236,7 @@ export default function HousesPage() {
             ))}
           </div>
           <Button variant="outline" className="mt-9" asChild>
-            <Link href="/reading">Take the Reading Now →</Link>
+            <Link href="/#reading">Take the Reading Now →</Link>
           </Button>
         </div>
       </PillarSection>
@@ -269,7 +269,7 @@ export default function HousesPage() {
               Not sure which House you are?
             </p>
             <Button asChild>
-              <Link href="/reading">Get Your Whole Body Design Reading →</Link>
+              <Link href="/#reading">Get Your Whole Body Design Reading →</Link>
             </Button>
           </div>
         </div>
@@ -333,7 +333,7 @@ export default function HousesPage() {
               [
                 "Take the Whole Body Design Reading to discover your House.",
                 "Get Your Reading",
-                "/reading",
+                "/#reading",
               ],
               [
                 "Join the sovereign network. Build with people who know their House.",
@@ -346,7 +346,7 @@ export default function HousesPage() {
                 key={cta}
               >
                 <p className="text-sm leading-6 text-moonstone/70">{body}</p>
-                <Button variant={href === "/reading" ? "gold" : "violet"} className="mt-5" asChild>
+                <Button variant={href === "/#reading" ? "gold" : "violet"} className="mt-5" asChild>
                   <Link href={href}>{cta} →</Link>
                 </Button>
               </Card>

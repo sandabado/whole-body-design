@@ -61,7 +61,7 @@ export default function GuildPage() {
 
       <section className="px-6 py-20">
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
-          <Card className="border-gold/20 bg-obsidian/82 p-7 text-center"><h2 className="font-display text-2xl text-gold">Reading</h2><p className="mt-4 text-sm leading-6 text-moonstone/70">Not sure which House you are? Take the reading first.</p><Button className="mt-6" asChild><Link href="/reading">Get Your Design Reading →</Link></Button></Card>
+          <Card className="border-gold/20 bg-obsidian/82 p-7 text-center"><h2 className="font-display text-2xl text-gold">Reading</h2><p className="mt-4 text-sm leading-6 text-moonstone/70">Not sure which House you are? Take the reading first.</p><Button className="mt-6" asChild><Link href="/#reading">Get Your Design Reading →</Link></Button></Card>
           <Card className="border-violet/20 bg-obsidian/82 p-7 text-center"><h2 className="font-display text-2xl text-violet">Houses</h2><p className="mt-4 text-sm leading-6 text-moonstone/70">Learn what each House means in the dodecanic system.</p><Button className="mt-6" variant="violet" asChild><Link href="/houses">Explore the 12 Houses →</Link></Button></Card>
         </div>
       </section>

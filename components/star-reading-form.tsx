@@ -216,7 +216,7 @@ export function StarReadingForm() {
         />
         <span>
           I consent to receive my Whole Body Design Reading and occasional
-          updates from WholeBody.earth. My birth data is used solely for
+          updates from WholeBody Design. My birth data is used solely for
           generating my reading and is never sold or shared.
         </span>
       </label>

@@ -20,7 +20,7 @@ export default async function AccountPage() {
           <h2 className="font-display text-3xl text-gold">Your Design Network</h2>
           <p className="mt-4 text-moonstone/70">Return to your House reading or enter the sovereign creator network.</p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button asChild><Link href="/reading">Get Your Reading</Link></Button>
+            <Button asChild><Link href="/#reading">Get Your Reading</Link></Button>
             <Button variant="violet" asChild><Link href="/guild">Explore the Guild</Link></Button>
           </div>
         </Card>

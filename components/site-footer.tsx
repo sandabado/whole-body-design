@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const columns = [
   { title: "Network", links: [["wholebody.design", "/"], ["Sister site: wholebody.earth", "https://wholebody.earth"]] },
-  { title: "Explore", links: [["Houses", "/houses"], ["Guild", "/guild"], ["Get Your Reading", "/reading"]] },
+  { title: "Explore", links: [["Houses", "/houses"], ["Guild", "/guild"], ["Get Your Reading", "/#reading"]] },
   { title: "Account", links: [["Sign In", "/account/signin"], ["Profile", "/account"], ["Settings", "/account/settings"]] },
 ] as const
 
