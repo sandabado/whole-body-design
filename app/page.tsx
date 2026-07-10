@@ -35,6 +35,8 @@ const featuredHouses = [
     element: "Fire",
     archetype: "Ignition",
     quote: "You begin. You start. You are the spark.",
+    implication:
+      "You’re designed to initiate projects, lead circles, and be the first mover.",
     pillar: "Presence",
     tone: "text-ember border-ember/25",
   },
@@ -44,6 +46,8 @@ const featuredHouses = [
     element: "Air",
     archetype: "Signal",
     quote: "You carry the word. You transmit what needs to be heard.",
+    implication:
+      "You’re designed to communicate, publish, and carry signal to those who need it.",
     pillar: "Press",
     tone: "text-gold border-gold/25",
   },
@@ -53,6 +57,8 @@ const featuredHouses = [
     element: "Earth",
     archetype: "Ground",
     quote: "You root the vision. You build what lasts.",
+    implication:
+      "You’re designed to build foundations, hold land, and create what endures.",
     pillar: "Foundation",
     tone: "text-sage border-sage/25",
   },
@@ -62,6 +68,8 @@ const featuredHouses = [
     element: "Ether",
     archetype: "Sovereign",
     quote: "You protect the system. You ensure the work outlasts you.",
+    implication:
+      "You’re designed to architect trust, shield assets, and hold the container.",
     pillar: "Guardian",
     tone: "text-violet border-violet/25",
   },
@@ -117,7 +125,7 @@ export default function HomePage() {
               </p>
               <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button className="px-6" size="lg" variant="gold" asChild>
-                  <Link href="#reading">
+                  <Link href="/reading">
                     Get Your Whole Body Design Reading — Free →
                   </Link>
                 </Button>
@@ -219,6 +227,9 @@ export default function HomePage() {
                     <p className="mt-5 flex-1 text-sm leading-6 text-moonstone/70">
                       “{house.quote}”
                     </p>
+                    <p className="mt-4 text-xs leading-5 text-moonstone/52 italic">
+                      {house.implication}
+                    </p>
                     <p className="mt-5 font-mono text-xs text-moonstone/55">
                       Element: {house.element} · Pillar: {house.pillar}
                     </p>
@@ -253,6 +264,9 @@ export default function HomePage() {
               <div className="mt-10 rounded-lg border border-gold/15 bg-obsidian/76 p-6 text-left shadow-2xl backdrop-blur-md sm:p-8">
                 <StarReadingForm />
               </div>
+              <p className="mt-5 font-mono text-xs text-moonstone/40">
+                Powered by fate.energy
+              </p>
             </div>
           </section>
 

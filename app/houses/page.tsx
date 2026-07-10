@@ -153,6 +153,29 @@ const elementGroups = [
   },
 ] as const
 
+const implications = {
+  I: "You’re designed to initiate, lead, and move first.",
+  II: "You’re designed to preserve, hold, and carry forward.",
+  III: "You’re designed to communicate, publish, and transmit.",
+  IV: "You’re designed to build foundations that endure.",
+  V: "You’re designed to architect trust and hold the container.",
+  VI: "You’re designed to support, hold space, and be present.",
+  VII: "You’re designed to create art that reveals truth.",
+  VIII: "You’re designed to deconstruct, edit, and refine.",
+  IX: "You’re designed to scale, replicate, and grow systems.",
+  X: "You’re designed to govern, structure, and lead institutions.",
+  XI: "You’re designed to convene, unite, and gather people.",
+  XII: "You’re designed to explore, research, and plumb depths.",
+} as const
+
+const pillarPaths = {
+  Foundation: "foundation",
+  Guardian: "guardian",
+  Presence: "presence",
+  Press: "press",
+  Studios: "studios",
+} as const
+
 const toneClasses = {
   ember:
     "border-ember/25 hover:border-ember/70 hover:shadow-[0_0_28px_rgba(194,84,45,0.18)] text-ember",
@@ -195,7 +218,7 @@ export default function HousesPage() {
               Earth. This is your design.
             </p>
             <Button size="lg" asChild>
-              <Link href="/#reading">Get Your Whole Body Design Reading →</Link>
+              <Link href="/reading">Get Your Whole Body Design Reading →</Link>
             </Button>
           </>
         }
@@ -236,7 +259,7 @@ export default function HousesPage() {
             ))}
           </div>
           <Button variant="outline" className="mt-9" asChild>
-            <Link href="/#reading">Take the Reading Now →</Link>
+            <Link href="/reading">Take the Reading Now →</Link>
           </Button>
         </div>
       </PillarSection>
@@ -258,9 +281,18 @@ export default function HousesPage() {
                 <p className="mt-4 flex-1 text-sm leading-6 text-moonstone/68">
                   {house.description}
                 </p>
+                <p className="mt-4 text-xs leading-5 text-moonstone/52 italic">
+                  {implications[house.house]}
+                </p>
                 <p className={`mt-6 font-mono text-xs ${textTone[house.tone]}`}>
                   {house.symbol} {house.element} · {house.pillar}
                 </p>
+                <a
+                  className="mt-4 text-xs text-moonstone/62 transition hover:text-gold"
+                  href={`https://wholebody.earth/${pillarPaths[house.pillar]}`}
+                >
+                  Explore {house.pillar} →
+                </a>
               </Card>
             ))}
           </div>
@@ -269,7 +301,7 @@ export default function HousesPage() {
               Not sure which House you are?
             </p>
             <Button asChild>
-              <Link href="/#reading">Get Your Whole Body Design Reading →</Link>
+              <Link href="/reading">Get Your Whole Body Design Reading →</Link>
             </Button>
           </div>
         </div>
@@ -315,6 +347,12 @@ export default function HousesPage() {
                       </div>
                     ))}
                   </div>
+                  <a
+                    className="mt-5 inline-block text-sm text-gold hover:text-gold/75"
+                    href={`https://wholebody.earth/${pillarPaths[groupHouses[0].pillar]}`}
+                  >
+                    Explore {groupHouses[0].pillar} →
+                  </a>
                 </details>
               )
             })}
@@ -333,7 +371,7 @@ export default function HousesPage() {
               [
                 "Take the Whole Body Design Reading to discover your House.",
                 "Get Your Reading",
-                "/#reading",
+                "/reading",
               ],
               [
                 "Join the sovereign network. Build with people who know their House.",
@@ -346,7 +384,11 @@ export default function HousesPage() {
                 key={cta}
               >
                 <p className="text-sm leading-6 text-moonstone/70">{body}</p>
-                <Button variant={href === "/#reading" ? "gold" : "violet"} className="mt-5" asChild>
+                <Button
+                  variant={href === "/reading" ? "gold" : "violet"}
+                  className="mt-5"
+                  asChild
+                >
                   <Link href={href}>{cta} →</Link>
                 </Button>
               </Card>

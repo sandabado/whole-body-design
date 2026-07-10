@@ -15,6 +15,14 @@ const bodyColors: Record<keyof BodyMatrix, string> = {
   spiritual: "#C2542D",
 }
 
+const pillarByElement = {
+  Aether: ["Guardian", "guardian"],
+  Air: ["Press", "press"],
+  Earth: ["Foundation", "foundation"],
+  Fire: ["Presence", "presence"],
+  Water: ["Studios", "studios"],
+} as const
+
 export function StarReadingResult({
   onReset,
   reading,
@@ -24,6 +32,10 @@ export function StarReadingResult({
   reading: ReadingResult
   readingId: string | null
 }) {
+  const [pillar, pillarPath] = pillarByElement[
+    reading.element as keyof typeof pillarByElement
+  ] ?? ["Guardian", "guardian"]
+
   return (
     <div className="mx-auto max-w-3xl space-y-7">
       <div className="text-center">
@@ -48,6 +60,21 @@ export function StarReadingResult({
 
       <Card className="border-gold/20 bg-obsidian/84 p-6">
         <p className="text-sm leading-7 text-moonstone/80">{reading.summary}</p>
+        <div className="mt-6 border-t border-gold/15 pt-5">
+          <p className="font-mono text-xs tracking-[0.2em] text-gold uppercase">
+            Your Pillar
+          </p>
+          <p className="mt-2 font-display text-2xl text-moonstone">{pillar}</p>
+          <p className="mt-2 text-sm text-moonstone/65">
+            This is where your design is made visible in the world.
+          </p>
+          <a
+            className="mt-4 inline-block text-sm text-gold hover:text-gold/75"
+            href={`https://wholebody.earth/${pillarPath}`}
+          >
+            Explore {pillar} →
+          </a>
+        </div>
       </Card>
 
       <section>
@@ -81,8 +108,24 @@ export function StarReadingResult({
       </section>
 
       <div className="grid gap-4 pt-2 sm:grid-cols-2">
-        <Card className="border-gold/20 bg-obsidian/84 p-6 text-center"><h3 className="font-display text-xl text-gold">Explore Your House</h3><p className="mt-3 text-sm text-moonstone/65">See your archetype in the full dodecanic system.</p><Button className="mt-5" asChild><Link href="/houses">Explore the 12 Houses →</Link></Button></Card>
-        <Card className="border-violet/20 bg-obsidian/84 p-6 text-center"><h3 className="font-display text-xl text-violet">Join the Network</h3><p className="mt-3 text-sm text-moonstone/65">Build with people who know their House.</p><Button className="mt-5" variant="violet" asChild><Link href="/guild">Join the Guild →</Link></Button></Card>
+        <Card className="border-gold/20 bg-obsidian/84 p-6 text-center">
+          <h3 className="font-display text-xl text-gold">Explore Your House</h3>
+          <p className="mt-3 text-sm text-moonstone/65">
+            See your archetype in the full dodecanic system.
+          </p>
+          <Button className="mt-5" asChild>
+            <Link href="/houses">Explore the 12 Houses →</Link>
+          </Button>
+        </Card>
+        <Card className="border-violet/20 bg-obsidian/84 p-6 text-center">
+          <h3 className="font-display text-xl text-violet">Join the Network</h3>
+          <p className="mt-3 text-sm text-moonstone/65">
+            Build with people who know their House.
+          </p>
+          <Button className="mt-5" variant="violet" asChild>
+            <Link href="/guild">Join the Guild →</Link>
+          </Button>
+        </Card>
         {onReset ? (
           <Button
             type="button"
@@ -94,6 +137,27 @@ export function StarReadingResult({
           </Button>
         ) : null}
       </div>
+      <Card className="border-gold/20 bg-obsidian/84 p-6 text-center">
+        <h3 className="font-display text-2xl text-gold">
+          Your House Is the Door. The Guild Is the Room.
+        </h3>
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-moonstone/65">
+          Meet people who share your House and the people whose Houses
+          complement yours. One membership. Full access.
+        </p>
+        <div className="mt-5 grid gap-2 text-left text-sm text-moonstone/72 sm:grid-cols-2">
+          <span>✓ Member directory by House</span>
+          <span>✓ Monthly gathering</span>
+          <span>✓ Voting rights + AMA</span>
+          <span>✓ 15% off wholebody.earth</span>
+        </div>
+        <p className="mt-6 font-mono text-xl text-gold">
+          $11.11/month · Cancel anytime
+        </p>
+        <Button className="mt-5" variant="gold" asChild>
+          <Link href="/guild">Join the Guild →</Link>
+        </Button>
+      </Card>
     </div>
   )
 }

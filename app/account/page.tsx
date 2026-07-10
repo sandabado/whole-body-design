@@ -17,11 +17,19 @@ export default async function AccountPage() {
       </PageHero>
       <section className="px-6 py-16">
         <Card className="mx-auto max-w-2xl border-gold/15 bg-obsidian/82 p-7 text-center">
-          <h2 className="font-display text-3xl text-gold">Your Design Network</h2>
-          <p className="mt-4 text-moonstone/70">Return to your House reading or enter the sovereign creator network.</p>
+          <h2 className="font-display text-3xl text-gold">
+            Your Design Network
+          </h2>
+          <p className="mt-4 text-moonstone/70">
+            Return to your House reading or enter the sovereign creator network.
+          </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button asChild><Link href="/#reading">Get Your Reading</Link></Button>
-            <Button variant="violet" asChild><Link href="/guild">Explore the Guild</Link></Button>
+            <Button asChild>
+              <Link href="/reading">Get Your Reading</Link>
+            </Button>
+            <Button variant="violet" asChild>
+              <Link href="/guild">Explore the Guild</Link>
+            </Button>
           </div>
         </Card>
       </section>
